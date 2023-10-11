@@ -22,7 +22,6 @@ const addNoteHandler = (request, h) => {
         noteId: id,
       },
     });
-
     response.code(201);
     return response;
   }
@@ -31,8 +30,16 @@ const addNoteHandler = (request, h) => {
     status: 'Gagal',
     message: 'Note gagal ditambahkan',
   });
+
   response.code(500);
   return response;
 };
 
-module.exports = { addNoteHandler };
+const getAllNotesHandler = () => ({
+  status: 'sukses',
+  data: {
+    notes,
+  },
+});
+
+module.exports = { addNoteHandler, getAllNotesHandler };
